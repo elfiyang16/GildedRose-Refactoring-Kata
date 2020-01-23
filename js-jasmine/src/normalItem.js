@@ -1,5 +1,5 @@
 export default class NormalItem {
-  constructor(height, width) {
+  constructor() {
     this.VALUE_BEFORE_EXPIRY = 1;
     this.VALUE_AFTER_EXPIRY = 2;
   }

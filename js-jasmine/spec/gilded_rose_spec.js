@@ -99,4 +99,12 @@ describe("Gilded Rose", function() {
       expect(items[1]).toEqual(new Item("Cursed Relic", 9, 49));
     });
   });
+  describe("5. Conjured Items", function() {
+    it("a. quality reduce by 2 before expiry", function() {
+      const conjured = new Item("Conjured Rye", 10, 10);
+      const gildedRose = new Shop([conjured]);
+      const items = gildedRose.updateQuality();
+      expect(items[0]).toEqual(new Item("Conjured Rye", 9, 8));
+    });
+  });
 });
