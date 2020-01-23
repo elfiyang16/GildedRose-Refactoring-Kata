@@ -16,5 +16,12 @@ describe("Gilded Rose", function() {
       const items = gildedRose.updateQuality();
       expect(items[0]).toEqual(new Item("Cursed Relic", -1, 8));
     });
+
+    it("c. quality should not be less than 0", function() {
+      const cursedRelic = new Item("Cursed Relic", -3, 0);
+      const gildedRose = new Shop([cursedRelic]);
+      const items = gildedRose.updateQuality();
+      expect(items[0]).toEqual(new Item("Cursed Relic", -4, 0));
+    });
   });
 });
