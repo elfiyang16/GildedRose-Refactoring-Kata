@@ -6,11 +6,9 @@ export default class Brie extends NormalItem {
   }
 
   updateQuality(item) {
-    if (super.isExpired(item)) {
-      this.increaseQuality(item, this.VALUE_AFTER_EXPIRY);
-    } else {
-      this.increaseQuality(item, this.VALUE_BEFORE_EXPIRY);
-    }
+    super.isExpired(item)
+      ? this.increaseQuality(item, this.VALUE_AFTER_EXPIRY)
+      : this.increaseQuality(item, this.VALUE_BEFORE_EXPIRY);
   }
 
   increaseQuality(item, value) {

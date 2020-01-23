@@ -18,13 +18,12 @@ export default class Shop {
   updateQuality() {
     var self = this;
     this.items.forEach(item => {
-      if (self.isBrie(item)) {
-        self.brie.updateQuality(item);
-      } else if (self.isPass(item)) {
-        self.backStagePass.updateQuality(item);
-      } else {
-        self.normalItem.updateQuality(item);
-      }
+      if (self.isSulfuras(item)) return;
+      self.isBrie(item)
+        ? self.brie.updateQuality(item)
+        : self.isPass(item)
+        ? self.backStagePass.updateQuality(item)
+        : self.normalItem.updateQuality(item);
       self.normalItem.updateSellIn(item);
     });
     return self.items;
@@ -36,5 +35,9 @@ export default class Shop {
 
   isPass(item) {
     return item.name.includes("Backstage passes to a TAFKAL80ETC concert");
+  }
+
+  isSulfuras(item) {
+    return item.name.includes("Sulfuras, Hand of Ragnaros");
   }
 }

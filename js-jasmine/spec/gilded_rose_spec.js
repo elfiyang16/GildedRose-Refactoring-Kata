@@ -82,7 +82,7 @@ describe("Gilded Rose", function() {
     });
   });
 
-  xdescribe("4. Rule of Thumb", function() {
+  describe("4. Rule of Thumb", function() {
     it("a. sulfuras never changes sellby and quality always is 80", function() {
       const sulfuras = new Item("Sulfuras, Hand of Ragnaros", 10, 80);
       const gildedRose = new Shop([sulfuras]);

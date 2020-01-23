@@ -10,14 +10,12 @@ export default class BackStagePass extends Brie {
   }
 
   updateQuality(item) {
-    if (super.isExpired(item)) {
-      item.quality = this.VALUE_AFTER_LAST_DAY = 0;
-    } else if (item.sellIn <= 5) {
-      super.increaseQuality(item, this.VALUE_UNTIL_LAST_DAY);
-    } else if (item.sellIn < 11) {
-      this.increaseQuality(item, this.VALUE_UNTIL_LAST_5_DAYS);
-    } else {
-      this.increaseQuality(item, this.VALUE_UNTIL_LAST_10_DAYS);
-    }
+    super.isExpired(item)
+      ? (item.quality = this.VALUE_AFTER_LAST_DAY)
+      : item.sellIn <= 5
+      ? super.increaseQuality(item, this.VALUE_UNTIL_LAST_DAY)
+      : item.sellIn < 11
+      ? this.increaseQuality(item, this.VALUE_UNTIL_LAST_5_DAYS)
+      : this.increaseQuality(item, this.VALUE_UNTIL_LAST_10_DAYS);
   }
 }
