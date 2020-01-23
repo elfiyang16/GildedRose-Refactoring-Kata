@@ -10,5 +10,11 @@ describe("Gilded Rose", function() {
       const items = gildedRose.updateQuality();
       expect(items[0]).toEqual(new Item("Cursed Relic", 8, 8));
     });
+
+    it("b. quality reduces 2 times faster once sell by has passed", function() {
+      const gildedRose = new Shop([new Item("Cursed Relic", 0, 10)]);
+      const items = gildedRose.updateQuality();
+      expect(items[0]).toEqual(new Item("Cursed Relic", -1, 8));
+    });
   });
 });
