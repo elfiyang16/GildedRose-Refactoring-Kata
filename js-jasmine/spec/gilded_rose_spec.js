@@ -40,7 +40,7 @@ describe("Gilded Rose", function() {
     });
   });
 
-  xdescribe("3. Backstage Pass", function() {
+  describe("3. Backstage Pass", function() {
     it("a. quanlity increases by 1 up to 10 days", function() {
       const pass = new Item(
         "Backstage passes to a TAFKAL80ETC concert",
