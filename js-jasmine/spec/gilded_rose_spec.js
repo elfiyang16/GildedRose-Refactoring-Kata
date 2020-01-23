@@ -26,7 +26,7 @@ describe("Gilded Rose", function() {
   });
 
   describe("2. Aged Brie", function() {
-    it("a. quality increases by 1 when past sell in", function() {
+    it("a. quality increases by 1 everyday", function() {
       const brie = new Item("Aged Brie", 10, 10);
       const gildedRose = new Shop([brie]);
       const items = gildedRose.updateQuality();
