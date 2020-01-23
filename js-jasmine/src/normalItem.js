@@ -5,7 +5,7 @@ export default class NormalItem {
   }
 
   updateSellIn(item) {
-    this.decreaseSellIn(item);
+    item.sellIn -= 1;
   }
 
   updateQuality(item) {
@@ -16,21 +16,17 @@ export default class NormalItem {
     }
   }
 
-  decreaseSellIn(item) {
-    item.sellIn -= 1;
-  }
-
   isExpired(item) {
     return item.sellIn <= 0;
   }
 
   decreaseQuality(item, value) {
-    this.willBeQualityBelow0(item, value)
+    this.willQualityBeBelow0(item, value)
       ? (item.quality = 0)
       : (item.quality -= value);
   }
 
-  willBeQualityBelow0(item, value) {
+  willQualityBeBelow0(item, value) {
     return item.quality - value <= 0;
   }
 }

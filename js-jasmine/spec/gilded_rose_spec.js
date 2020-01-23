@@ -1,6 +1,5 @@
 import Shop from "../src/shop.js";
 import Item from "../src/item.js";
-// var { Shop, Item } = require("../src/gilded_rose.js");
 
 describe("Gilded Rose", function() {
   describe("1. Normal item", function() {
@@ -25,7 +24,7 @@ describe("Gilded Rose", function() {
     });
   });
 
-  xdescribe("2. Aged Brie", function() {
+  describe("2. Aged Brie", function() {
     it("a. quality increases by 1 everyday", function() {
       const brie = new Item("Aged Brie", 10, 10);
       const gildedRose = new Shop([brie]);
