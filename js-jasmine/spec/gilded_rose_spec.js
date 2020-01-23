@@ -42,7 +42,7 @@ describe("Gilded Rose", function() {
   });
 
   describe("3. Backstage Pass", function() {
-    it("a. quantity increases by 1 up to 10 days", function() {
+    it("a. quanlity increases by 1 up to 10 days", function() {
       const pass = new Item(
         "Backstage passes to a TAFKAL80ETC concert",
         12,
@@ -55,7 +55,7 @@ describe("Gilded Rose", function() {
       );
     });
 
-    it("b. quantity increases by 2 up to 5 days", function() {
+    it("b. quanlity increases by 2 up to 5 days", function() {
       const pass = new Item("Backstage passes to a TAFKAL80ETC concert", 6, 10);
       const gildedRose = new Shop([pass]);
       const items = gildedRose.updateQuality();
@@ -64,7 +64,7 @@ describe("Gilded Rose", function() {
       );
     });
 
-    it("c. quantity increases by 3 up to last day", function() {
+    it("c. quanlity increases by 3 up to last day", function() {
       const pass = new Item("Backstage passes to a TAFKAL80ETC concert", 4, 10);
       const gildedRose = new Shop([pass]);
       const items = gildedRose.updateQuality();
