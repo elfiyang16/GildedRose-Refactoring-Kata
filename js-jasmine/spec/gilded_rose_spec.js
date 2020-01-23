@@ -40,4 +40,19 @@ describe("Gilded Rose", function() {
       expect(items[0]).toEqual(new Item("Aged Brie", -6, 12));
     });
   });
+
+  describe("3. Backstage Pass", function() {
+    it("a. quantity increases by 1 up to 10 days", function() {
+      const pass = new Item(
+        "Backstage passes to a TAFKAL80ETC concert",
+        12,
+        10
+      );
+      const gildedRose = new Shop([pass]);
+      const items = gildedRose.updateQuality();
+      expect(items[0]).toEqual(
+        new Item("Backstage passes to a TAFKAL80ETC concert", 11, 11)
+      );
+    });
+  });
 });
