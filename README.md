@@ -1,3 +1,33 @@
+# My Kata in JS-Jasmine
+
+This repo is forked from https://github.com/emilybache/GildedRose-Refactoring-Kata during the tech test week at the coding bootcamp. It's a good practice to refactor legacy code (I did it in Javascript).
+
+The original version of the gilded_rose.js has been left in place for reference.
+For requirement, check [Gilded Rose Requirments)](GildedRoseRequirements.txt)
+
+## Workflow
+
+- Write full suite of tests in Jasmine
+- Refactor legacy code (see:[gilded_rose(original)](src/gilded_rose_ORIGINAL.js) to be more readable and easier to maintain
+- Ensure all tests are still running
+- Write tests for required new feature: `Conjured Item`
+- Add additional feature for Conjured Items
+- Check through all test, and add missing edge cases if necessary
+- Run all the tests, refactor and commit
+
+## Installation
+
+`git clone` current repo, and in the root directory run `npm install`.
+
+Once install dependencies, run `npm test` to check all test result.
+
+## Reflection
+
+This is an interesting practice on the legacy code refactor. I tried to implement **SOLID** and some **OOP** principles into the design such as `inheritance`, `encapsulation` and `single responsibility principles`.
+All code are written in `ES6` standard. If I have more time, I would like to explore the `Mix-ins` more. As an ECMAScript class can only have a single superclass, which means multiple inheritance is not possible. So my `BackStagePass` inherits from `Brie` class, but cannot from `NormalItem` class. It doesn't make a big difference for now, but it's just interesting to see more.
+
+**====================From Forked Repo===============================**
+
 # Gilded Rose Refactoring Kata
 
 This Kata was originally created by Terry Hughes (http://twitter.com/TerryHughes). It is already on GitHub [here](https://github.com/NotMyself/GildedRose). See also [Bobby Johnson's description of the kata](http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/).
@@ -18,7 +48,7 @@ You could write some unit tests yourself, using the requirements to identify sui
 
 Alternatively, use the "Text-Based" tests provided in this repository. (Read more about that in the next section)
 
-Whichever testing approach you choose, the idea of the exercise is to do some deliberate practice, and improve your skills at designing test cases and refactoring. The idea is not to re-write the code from scratch, but rather to practice designing tests, taking small steps, running the tests often, and incrementally improving the design. 
+Whichever testing approach you choose, the idea of the exercise is to do some deliberate practice, and improve your skills at designing test cases and refactoring. The idea is not to re-write the code from scratch, but rather to practice designing tests, taking small steps, running the tests often, and incrementally improving the design.
 
 ## Text-Based Approval Testing
 
@@ -46,4 +76,4 @@ I've also set this kata up on [cyber-dojo](http://cyber-dojo.org) for several la
 
 I analysed this repo according to the clean code standards on [Better Code Hub](https://bettercodehub.com) just to get an independent opinion of how bad the code is. Perhaps unsurprisingly, the compliance score is low!
 
-[![BCH compliance](https://bettercodehub.com/edge/badge/emilybache/GildedRose-Refactoring-Kata?branch=master)](https://bettercodehub.com/) 
+[![BCH compliance](https://bettercodehub.com/edge/badge/emilybache/GildedRose-Refactoring-Kata?branch=master)](https://bettercodehub.com/)

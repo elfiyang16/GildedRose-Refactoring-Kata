@@ -1,5 +1,4 @@
-bin
-obj
-*.sln.DotSettings.user
-.vs
-vendor
+/node_modules/
+js-jest/
+js-mocha/
+ruby/
