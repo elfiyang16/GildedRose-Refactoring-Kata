@@ -107,11 +107,18 @@ describe("Gilded Rose", function() {
       expect(items[0]).toEqual(new Item("Conjured Rye", 9, 8));
     });
 
-    it("a. quality reduce by 4 after expiry", function() {
+    it("b. quality reduce by 4 after expiry", function() {
       const conjured = new Item("Conjured Rye", 0, 10);
       const gildedRose = new Shop([conjured]);
       const items = gildedRose.updateQuality();
       expect(items[0]).toEqual(new Item("Conjured Rye", -1, 6));
+    });
+
+    it("c. quality never drop below 0", function() {
+      const conjured = new Item("Conjured Rye", 2, 1);
+      const gildedRose = new Shop([conjured]);
+      const items = gildedRose.updateQuality();
+      expect(items[0]).toEqual(new Item("Conjured Rye", 1, 0));
     });
   });
 });
