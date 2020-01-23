@@ -82,4 +82,22 @@ describe("Gilded Rose", function() {
       );
     });
   });
+
+  describe("4. Rule of Thumb", function() {
+    it("a. sulfuras never changes sellby and quality always is 80", function() {
+      const sulfuras = new Item("Sulfuras, Hand of Ragnaros", 10, 80);
+      const gildedRose = new Shop([sulfuras]);
+      const items = gildedRose.updateQuality();
+      expect(items[0]).toEqual(new Item("Sulfuras, Hand of Ragnaros", 10, 80));
+    });
+
+    it("b. no other item should ever has a quality more than 50", function() {
+      const brie = new Item("Aged Brie", 10, 50);
+      const cursedRelic = new Item("Cursed Relic", 10, 50);
+      const gildedRose = new Shop([brie, cursedRelic]);
+      const items = gildedRose.updateQuality();
+      expect(items[0]).toEqual(new Item("Aged Brie", 9, 50));
+      expect(items[1]).toEqual(new Item("Cursed Relic", 9, 49));
+    });
+  });
 });
